@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Cálculo Numerológico</title>
+    <script>
+        // Código JavaScript para cálculo numerológico
+        function calcularNumerologia() {
+            let nome = document.getElementById('nome').value;
+            let resultado = numerologia(nome);
+            document.getElementById('resultado').innerText = "Resultado: " + resultado;
+        }
+
+        function numerologia(nome) {
+            // Função de cálculo numerológico simples, substitua conforme necessário
+            let soma = 0;
+            for (let i = 0; i < nome.length; i++) {
+                soma += nome.charCodeAt(i);
+            }
+            return soma % 9 === 0 ? "Espírito em ascensão" : "Espírito rebaixado";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora Numerológica</h1>
+    <label for="nome">Digite seu nome completo:</label>
+    <input type="text" id="nome" name="nome">
+    <button onclick="calcularNumerologia()">Calcular</button>
+    <p id="resultado"></p>
+</body>
+</html>
+2. Criar o arquivo Java:
+Abra o editor de texto e cole o código Java dentro do editor.
+Salve o arquivo com a extensão .java (por exemplo, Numerologia.java).
+Exemplo de código Java:
+java
+Copiar
+Editar
+import java.util.Scanner;
+
+public class Numerologia {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite seu nome completo: ");
+        String nome = scanner.nextLine();
+        String resultado = calcularNumerologia(nome);
+        System.out.println("Resultado: " + resultado);
+        scanner.close();
+    }
+
+    public static String calcularNumerologia(String nome) {
+        int soma = 0;
+        for (int i = 0; i < nome.length(); i++) {
+            soma += nome.charAt(i);
+        }
+        return soma % 9 == 0 ? "Espírito em ascensão" : "Espírito rebaixado";
+    }
+}
